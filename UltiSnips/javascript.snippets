@@ -58,22 +58,45 @@ export default $1;
 endsnippet
 
 snippet rfc "React Functional Component" b
-import React, { PropTypes } from 'react';
+import React from 'react';
 import styles from './${2:$1}.css';
 
 const ${1:`!v expand('%:t:r')`} = ({ ${3:...props} }) => (
-	<div className={styles.base}>
+	<div>
 		$4
 	</div>
 );
 
-$1.defaultProps = {
-};
-
-$1.propTypes = {
-};
-
 export default $1;
+endsnippet
+
+snippet rpf "React Pure Function" b
+const ${1:`!v expand('%:t:r')`} = ({ ${3:...props} }) => (
+	<div>
+		$4
+	</div>
+);
+endsnippet
+
+snippet rt "React Test Component" b
+import React from 'react';
+import {} from '../${2:$1}.css';
+
+describe('', () => {
+
+});
+endsnippet
+
+snippet rtd "React Test Describe Block" b
+describe('$1', () => {
+	$2
+});
+endsnippet
+
+snippet rtc "React Test Case Block" b
+it('$1', () => {
+
+});
 endsnippet
 
 snippet cn "className"
